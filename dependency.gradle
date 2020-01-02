@@ -1,0 +1,16 @@
+ext {
+  def lombokVersion = '1.18.4'
+  def orgJsonVersion = '20180130'
+  def aliSmsVersion = '4.1.0'
+  def jacksonVersion = '2.9.6'
+  def qCloudSmsVersion = '1.0.6'
+
+  
+  lombok = "org.projectlombok:lombok:${lombokVersion}"
+  orgJson = "org.json:json:${orgJsonVersion}"
+  aliSms = "com.aliyun:aliyun-java-sdk-core:${aliSmsVersion}"
+  jackSonAnnotations = "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
+  jackSonCore = "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+  jackSonDatabind = "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+  wxSms = "com.github.qcloudsms:qcloudsms:${qCloudSmsVersion}"
+}

@@ -1,0 +1,36 @@
+plugins {
+  id 'java'
+  id 'maven'
+}
+
+apply from: 'dependency.gradle'
+
+group = project_group
+version = project_version
+sourceCompatibility = project_jdk
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+}
+
+dependencies {
+  annotationProcessor lombok
+  compileOnly lombok
+  implementation aliSms
+  implementation wxSms
+  implementation jackSonAnnotations
+  implementation jackSonCore
+  implementation jackSonDatabind
+  compile orgJson
+}
+
+//def localMavenRepo = 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
+
+uploadArchives {
+  repositories.mavenDeployer {
+    repository(url: 'http://47.99.216.55:8081/repository/maven-releases/') {
+      authentication(userName: 'admin', password: 'admin123')
+    }
+  }
+}
